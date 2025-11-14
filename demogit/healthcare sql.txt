@@ -1,0 +1,37 @@
+create database healthcare;
+
+USE `healthcare` 
+
+CREATE TABLE IF NOT EXISTS `healthcare`.`users` (
+  `user_id` BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ `first_name` VARCHAR(30) NOT NULL,  
+  `last_name` VARCHAR(40) ,
+  `dob` DATE NULL ,
+  `email` VARCHAR(80)  UNIQUE NOT NULL, 
+  `password` VARCHAR(300) NOT NULL,
+  `phone` VARCHAR(14) UNIQUE NOT NULL,
+  `reg_amount` INT NOT NULL,
+  `role` ENUM('ROLE_ADMIN', 'ROLE_DOCTOR', 'ROLE_PATIENT') NOT NULL
+);
+  
+
+INSERT INTO users (first_name, last_name, dob, email, password, phone, reg_amount, role)
+VALUES
+-- Admin
+('Admin', 'Kumar', '1980-04-12', 'admin@healthcare.in', 'admin123', '9876500000', 0, 'ROLE_ADMIN'),
+
+-- Doctors
+('Amit', 'Sharma', '1983-09-15', 'amit.sharma@healthcare.in', 'doc123', '9876500001', 500, 'ROLE_DOCTOR'),
+('Priya', 'Nair', '1987-03-22', 'priya.nair@healthcare.in', 'doc123', '9876500002', 600, 'ROLE_DOCTOR'),
+('Rohan', 'Mehta', '1982-01-05', 'rohan.mehta@healthcare.in', 'doc123', '9876500006', 700, 'ROLE_DOCTOR'),
+('Neha', 'Reddy', '1989-11-25', 'neha.reddy@healthcare.in', 'doc123', '9876500007', 650, 'ROLE_DOCTOR'),
+-- Patients
+('Rahul', 'Patel', '1992-12-01', 'rahul.patel@healthcare.in', 'patient123', '9876500003', 300, 'ROLE_PATIENT'),
+('Sneha', 'Iyer', '1998-06-18', 'sneha.iyer@healthcare.in', 'patient123', '9876500004', 300, 'ROLE_PATIENT'),
+('Arjun', 'Deshmukh', '1995-03-09', 'arjun.deshmukh@healthcare.in', 'patient123', '9876500008', 400, 'ROLE_PATIENT'),
+('Pooja', 'Singh', '2000-08-22', 'pooja.singh@healthcare.in', 'patient123', '9876500009', 350, 'ROLE_PATIENT'),
+('Kiran', 'Pillai', '1993-02-11', 'kiran.pillai@healthcare.in', 'patient123', '9876500010', 250, 'ROLE_PATIENT'),
+('Meena', 'Joshi', '1989-10-02', 'meena.joshi@healthcare.in', 'patient123', '9876500011', 300, 'ROLE_PATIENT');
+
+
+
