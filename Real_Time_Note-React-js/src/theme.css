@@ -1,0 +1,275 @@
+/* 🌈 Modern, Elegant Theme for Note-Taking App */
+:root {
+  --bs-body-bg: #f8fafc;
+  --bs-body-color: #1e293b;
+  --bs-primary: #4f46e5;
+  --bs-primary-rgb: 79, 70, 229;
+  --bs-secondary: #64748b;
+  --bs-dark: #0f172a;
+  --bs-light: #ffffff;
+  --bs-border-color: #e2e8f0;
+  
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --card-shadow-hover: 0 8px 16px rgba(15, 23, 42, 0.08);
+  --muted: #94a3b8;
+  --accent: #f1f5f9;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.2px;
+  transition: background var(--transition-smooth);
+}
+
+/* 🌐 Navbar */
+.navbar {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-bottom: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #fff !important;
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 💬 Dropdown */
+.dropdown-menu {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow-hover);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  color: var(--bs-body-color);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent);
+  color: var(--bs-primary);
+}
+
+/* 🧱 Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  color: var(--bs-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.3px;
+}
+
+/* 🪟 Modals */
+.modal-content {
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.1);
+  animation: fadeIn 0.25s ease-in;
+}
+
+/* ✏️ Forms */
+.form-control {
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: border var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--bs-dark);
+  margin-bottom: 0.4rem;
+}
+
+/* 🔘 Buttons */
+.btn {
+  border-radius: 0.75rem;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.btn-outline-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* 🔔 Alerts */
+.alert {
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+}
+
+.alert-success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #065f46;
+}
+
+.alert-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #991b1b;
+}
+
+/* 🗒️ Note Card */
+.note-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.note-content {
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+  color: var(--bs-secondary);
+}
+
+.note-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .btn-lg {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✨ Animation */
+.fade-in {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Footer Styles */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.d-flex.flex-column.min-vh-100 {
+  min-height: 100vh;
+}
